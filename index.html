@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/index.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <header id="header">
+      <button id="add">Add</button>
+      <button id="delete">Delete</button>
+      <button id="fill">Fill</button>
+      <button id="clear">Clear</button>
+      <button id="history" class="visible">History</button>
+    </header>
+
+    <div class="wrapper">
+      <div class="cards-container" id="cards-container">
+        <!-- <div class='card'>
+                <h3 class='title'>The Road Not Taken</h3>
+                <section class='text'>
+                    (By Robert Frost)
+                    Two roads diverged in a yellow wood,
+                    And sorry I could not travel both
+                    And be one traveler, long I stood
+                    And looked down one as far as I could
+                    To where it bent in the undergrowth;
+
+                    Then took the other, as just as fair,
+                    And having perhaps the better claim,
+                    Because it was grassy and wanted wear;
+                    Though as for that the passing there
+                    Had worn them really about the same,
+
+                    And both that morning equally lay
+                    In leaves no step had trodden black.
+                    Oh, I kept the first for another day!
+                    Yet knowing how way leads on to way,
+                    I doubted if I should ever come back.
+
+                    I shall be telling this with a sigh
+                    Somewhere ages and ages hence:
+                    Two roads diverged in a wood, and I—
+                    I took the one less traveled by,
+                    And that has made all the difference.</section>
+                    <div class="button-container">
+                        <button class="see-more">See More</button>
+                        <button class="delete-card delete-button">Delete</button>
+                    </div>
+            </div> -->
+      </div>
+    </div>
+
+    <div id="modal">
+      <div id="history-content">
+        <h3>Deleted Cards</h3>
+        <div id="history-cards-container">
+        </div>
+        <button id="close-history">Close</button>
+      </div>
+
+      <div id="card-detail">
+        <h3 class="title" id="detail-title"></h3>
+        <pre class="text" id="detail-text"></pre>
+        <button id="close-preview">Close</button>
+      </div>
+    </div>
+
+    <script src="src/data.js"></script>
+    <script src="src/index.js"></script>
+  </body>
+</html>
