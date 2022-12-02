@@ -1,0 +1,242 @@
+body {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+header {
+  height: 60px;
+  width: 100%;
+  padding: 15px 17% 20px;
+  text-align: right;
+  background: #cacaca;
+  box-sizing: border-box;
+}
+
+header button {
+  margin-right: 10px;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: auto;
+  background: #999;
+  width: 1200px;
+  min-height: 360px;
+}
+
+.card {
+  position: relative;
+  height: 360px;
+  width: 220px;
+  background: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: Helvetica;
+  color: #aaa;
+}
+
+.card.deleted {
+  height: 250px;
+  width: 170px;
+}
+
+.title {
+  color: #fff;
+  min-height: 40px;
+  text-align: center;
+  font-size: 17px;
+}
+
+.text {
+  position: relative;
+  margin: 0 10px;
+  height: 220px;
+  overflow: hidden;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.text::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - 40px);
+  height: 40px;
+  width: 100%;
+  left: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(34, 34, 34, 1) 100%
+  );
+}
+
+.see-more {
+  height: 50px;
+  width: 80%;
+  margin: 10%;
+}
+
+.new-card {
+  background: #888;
+}
+
+.new-card::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: -100%;
+  height: 450px;
+  width: 90px;
+  transform: rotate(20deg);
+  background: rgba(255, 255, 255, 0.1);
+  animation: newCard 1s infinite alternate;
+}
+
+#history {
+  display: none;
+}
+
+#history.visible {
+  display: inline-block;
+}
+
+#modal {
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: #4d4c4c9e;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+}
+
+#modal.visible {
+  display: flex;
+}
+
+#modal #history-content {
+  display: none;
+  height: 500px;
+  width: 60%;
+  background: #fff;
+  text-align: center;
+}
+
+#modal #history-content.visible {
+  display: block;
+}
+
+#modal #history-content #history-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 20px;
+  gap: 10px;
+  height: 385px;
+  overflow: auto;
+}
+
+#close-history {
+  margin: 10px 0 0;
+  height: 30px;
+  width: 100px;
+}
+
+#modal #card-detail {
+  position: relative;
+  display: none;
+  height: 500px;
+  background: #ccc;
+  width: 300px;
+  overflow-y: auto;
+  border-radius: 10px;
+  font-family: inherit;
+}
+
+#modal #card-detail .title {
+  color: rgba(34, 34, 34, 1);
+  font-size: 21px;
+}
+
+#modal #card-detail .text {
+  height: 390px;
+  overflow-y: auto;
+  color: rgba(34, 34, 34, 1);
+}
+
+#modal #card-detail .text::after {
+  content: none;
+}
+
+#modal #card-detail #close-preview {
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  bottom: 0px;
+}
+
+#modal #card-detail.visible {
+  display: block;
+}
+
+@keyframes newCard {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 80%;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .cards-container {
+    width: calc(100vw - 40px);
+    margin: 0 20px;
+  }
+}
+
+/*biggest phone sizes (iPhone 12/13 pro)*/
+@media screen and (max-width: 927px) and (max-height: 429px) {
+  .cards-container {
+    display: block;
+    height: calc(100vh - 60px);
+    min-width: calc(100wh - 40px);
+  }
+
+  .wrapper {
+    margin: 0 20px;
+    max-width: calc(100vw - 40px);
+    overflow-x: scroll;
+  }
+
+  .cards-container {
+    width: calc(100vw - 40px);
+  }
+
+  .card {
+    margin-right: 10px;
+    float: left;
+    height: calc(100vh - 60px);
+  }
+}
+
+.button-container {
+  margin: 10px 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-container button {
+  width: 45%;
+  height: 40px;
+  margin: 0;
+}
